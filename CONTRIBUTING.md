@@ -4,12 +4,6 @@ The following rules will make easier to review PR's. Please, follow them so we a
 
 Thank you!
 
-## CI Configuration
-
-### Skip CI
-
-When is not necessary to execute the CI in a commit it needs be added `[ci skip]` to the commit description or title.
-
 ## Git Commit Messages
 
 - Use the present tense ("Add feature" not "Added feature")
@@ -32,3 +26,9 @@ When is not necessary to execute the CI in a commit it needs be added `[ci skip]
   - ⬇ when downgrading dependencies
   - 🗑️ when removing dependencies
   - 👕 when removing linter warnings
+
+## CI Configuration
+
+### Skip CI
+
+When is not necessary to execute the CI in a commit it needs be added `[ci skip]` to the commit description or title.
