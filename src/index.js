@@ -1,23 +1,24 @@
 /**
  * Removes every matched key recursively.
  *
- * @param {string} keyToSearch The key to delete.
+ * @param {string|Array<string>} filters The key(s) to delete.
  * @param {any} data The data to be processed.
  * @returns {any} The cleaned data.
  */
-export default function deepDelete(keyToSearch, data) {
+export default function deepDelete(filters, data) {
   if (Array.isArray(data)) {
-    return data.map(element => deepDelete(keyToSearch, element));
+    return data.map(element => deepDelete(filters, element));
   }
   if (!data || typeof data !== 'object') {
     return data;
   }
+  const hasMultipleFilters = Array.isArray(filters);
 
   return Object.keys(data).reduce((partial, key) => {
-    if (key === keyToSearch) {
+    if (hasMultipleFilters ? filters.includes(key) : key === filters) {
       return partial;
     }
-    partial[key] = deepDelete(keyToSearch, data[key]);
+    partial[key] = deepDelete(filters, data[key]);
 
     return partial;
   }, {});
