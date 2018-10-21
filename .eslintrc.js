@@ -1,14 +1,5 @@
 module.exports = {
-  extends: ['@dimax-ar/dimax'],
-  plugins: ['prettier'],
-  parserOptions: {
-    parser: 'babel-eslint',
-    ecmaVersion: 8,
-    sourceType: 'module',
-  },
-  env: {
-    browser: true,
-  },
+  extends: ['@dimax-ar/dimax/vue'],
   rules: {
     'filenames/match-exported': 0,
   },
