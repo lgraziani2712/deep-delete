@@ -2,6 +2,12 @@
 
 Removes every matched key for every object recursively. Can handle every type value. It's written in ES6++ and being used in our own codebase.
 
+Since v1.2.0 it also works on node importing the node version:
+
+```js
+const deepDelete = require('deep-delete/@node');
+```
+
 ## Usage
 
 ### For multiple keys
