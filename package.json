@@ -8,13 +8,14 @@
   "author": "Luciano Graziani <@lgraziani2712>",
   "license": "MIT",
   "files": [
-    "./README.md",
+    "README.md",
     "LICENSE",
-    "./src/es.js",
-    "./src/commonjs.js"
+    "src/commonjs.js",
+    "src/es.js"
   ],
   "scripts": {
-    "lint:js": "eslint . --fix"
+    "lint:js": "eslint . --fix",
+    "test": "node --experimental-worker ./testing"
   },
   "devDependencies": {
     "@dimax-ar/eslint-config-dimax": "3.0.1",

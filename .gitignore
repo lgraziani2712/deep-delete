@@ -15,6 +15,7 @@ deoptigate
 # production
 temp/*
 dist/*
+deep-delete*.tgz*
 
 # misc
 .DS_Store
