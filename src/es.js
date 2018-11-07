@@ -7,7 +7,12 @@
  */
 export default function deepDelete(filters, data) {
   if (Array.isArray(data)) {
-    return data.map(element => deepDelete(filters, element));
+    return data.map(
+      element =>
+        Array.isArray(element) || typeof element === 'object'
+          ? deepDelete(filters, element)
+          : element,
+    );
   }
   if (!data || typeof data !== 'object') {
     return data;
@@ -18,7 +23,12 @@ export default function deepDelete(filters, data) {
     if (hasMultipleFilters ? filters.includes(key) : key === filters) {
       return partial;
     }
-    partial[key] = deepDelete(filters, data[key]);
+    const element = data[key];
+
+    partial[key] =
+      Array.isArray(element) || typeof element === 'object'
+        ? deepDelete(filters, element)
+        : element;
 
     return partial;
   }, {});

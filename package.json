@@ -2,24 +2,28 @@
   "name": "deep-delete",
   "version": "1.2.0",
   "description": "Removes every matched key of every object recursively",
-  "main": "./es.js",
-  "module": "./es.js",
+  "main": "./src/commonjs.js",
+  "module": "./src/es.js",
   "repository": "https://github.com/dimax/deep-delete",
   "author": "Luciano Graziani <@lgraziani2712>",
   "license": "MIT",
   "files": [
     "./README.md",
     "LICENSE",
-    "es.js",
-    "@node.js"
+    "./src/es.js",
+    "./src/commonjs.js"
   ],
   "scripts": {
     "lint:js": "eslint . --fix"
   },
   "devDependencies": {
     "@dimax-ar/eslint-config-dimax": "3.0.1",
+    "beautify-benchmark": "0.2.4",
+    "benchmark": "2.1.4",
+    "deoptigate": "0.4.2",
     "eslint": "5.7.0",
     "jest": "23.6.0",
+    "microtime": "2.1.8",
     "prettier": "1.14.3"
   }
 }
