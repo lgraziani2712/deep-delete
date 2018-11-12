@@ -35,7 +35,7 @@ jobs:
 
       # run tests!
       - run:
-          command: yarn test --testResultsProcessor="jest-junit"
+          command: yarn test --reporters=default --reporters=jest-junit
           environment:
             JEST_JUNIT_OUTPUT: 'reports/junit/js-test-results.xml'
       - run: yarn benchmark

@@ -3,6 +3,7 @@
 'use strict';
 
 module.exports = {
+  reporters: ['default', 'jest-junit'],
   collectCoverageFrom: ['src/**/*.js'],
   coveragePathIgnorePatterns: [
     '/node_modules/',
