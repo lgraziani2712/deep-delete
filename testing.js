@@ -19,6 +19,8 @@ if (
   argv.indexOf('--ci') < 0
 ) {
   argv.push('--watch');
+} else {
+  argv.push('--coverage');
 }
 
 argv.push('--config', JSON.stringify(createJestConfig));
