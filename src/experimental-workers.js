@@ -12,34 +12,25 @@ const {
 } = require('worker_threads');
 
 if (!isMainThread) {
-  parentPort.postMessage({
-    response: require('.').call(null, workerData),
-  });
+  parentPort.postMessage(require('./commonjs').apply(null, workerData));
 
-  return;
+  process.exit(0);
 }
 
 /**
  * Removes every matched key recursively.
  *
  * @param {string|Array<string>} filters The key(s) to delete.
- * @param {any} data The data to be processed.
- * @returns {any} The cleaned data.
+ * @param {Object|Array} data The data to be processed.
+ * @returns {Object|Array} The cleaned data.
  */
 module.exports = function deepDeleteWithWT(filters, data) {
-  const hasMultipleFilters = Array.isArray(filters);
-
   return new Promise((resolve, reject) => {
     const worker = new Worker(__filename, {
-      workerData: [filters, data, hasMultipleFilters],
+      workerData: [filters, data],
     });
 
-    worker.on('exit', code => {
-      if (code !== 0) {
-        reject(`Worker thread finished with error code: ${code}`);
-      } else {
-        resolve(workerData);
-      }
-    });
+    worker.on('message', resolve);
+    worker.on('error', reject);
   });
 };

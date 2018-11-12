@@ -6,20 +6,19 @@
  * Removes every matched key recursively.
  *
  * @param {string|Array<string>} filters The key(s) to delete.
- * @param {any} data The data to be processed.
- * @returns {any} The cleaned data.
+ * @param {Object|Array} data The data to be processed.
+ * @returns {Object|Array} The cleaned data.
  */
 module.exports = function deepDelete(filters, data) {
+  const processElement = element =>
+    element != null &&
+    !(element instanceof Date) &&
+    (Array.isArray(element) || typeof element === 'object')
+      ? deepDelete(filters, element)
+      : element;
+
   if (Array.isArray(data)) {
-    return data.map(
-      element =>
-        Array.isArray(element) || typeof element === 'object'
-          ? deepDelete(filters, element)
-          : element,
-    );
-  }
-  if (!data || typeof data !== 'object') {
-    return data;
+    return data.map(processElement);
   }
   const hasMultipleFilters = Array.isArray(filters);
 
@@ -27,12 +26,8 @@ module.exports = function deepDelete(filters, data) {
     if (hasMultipleFilters ? filters.includes(key) : key === filters) {
       return partial;
     }
-    const element = data[key];
 
-    partial[key] =
-      Array.isArray(element) || typeof element === 'object'
-        ? deepDelete(filters, element)
-        : element;
+    partial[key] = processElement(data[key]);
 
     return partial;
   }, {});
