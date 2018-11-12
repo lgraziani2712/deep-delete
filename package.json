@@ -38,6 +38,7 @@
     "eslint": "5.8.0",
     "firebase-admin": "6.1.0",
     "jest": "23.6.0",
+    "jest-junit": "5.2.0",
     "microtime": "2.1.8",
     "prettier": "1.15.1"
   }
