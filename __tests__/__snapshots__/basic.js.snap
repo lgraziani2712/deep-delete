@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Normal version Multiple keys 1`] = `
+Array [
+  Object {
+    "anotherKey": 2,
+    "moreData": Object {},
+  },
+  1,
+  null,
+  "hola",
+  2015-03-25T12:00:00.000Z,
+]
+`;
+
+exports[`Normal version Single key 1`] = `
+Array [
+  Object {
+    "anotherKey": 2,
+    "moreData": Object {},
+  },
+  1,
+  null,
+  "hola",
+  2015-03-25T12:00:00.000Z,
+]
+`;
+
+exports[`Worker version Multiple keys 1`] = `
+Array [
+  Object {
+    "anotherKey": 2,
+    "moreData": Object {},
+  },
+  1,
+  null,
+  "hola",
+  2015-03-25T12:00:00.000Z,
+]
+`;
+
+exports[`Worker version Single key 1`] = `
+Array [
+  Object {
+    "anotherKey": 2,
+    "moreData": Object {},
+  },
+  1,
+  null,
+  "hola",
+  2015-03-25T12:00:00.000Z,
+]
+`;
