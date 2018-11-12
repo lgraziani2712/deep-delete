@@ -34,5 +34,10 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn test --coverage --coverageReporters=text-lcov | yarn coveralls
+      - run:
+          command: yarn test --reporters=default --reporters=jest-junit --coverage --coverageReporters=text-lcov | yarn coveralls
+          environment:
+            JEST_JUNIT_OUTPUT: 'reports/jest/result.xml'
       - run: yarn benchmark
+      - store_test_results:
+          path: reports
