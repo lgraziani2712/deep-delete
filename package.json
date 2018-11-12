@@ -13,18 +13,31 @@
     "src/commonjs.js",
     "src/es.js"
   ],
+  "keywords": [
+    "key",
+    "delete",
+    "deep-delete",
+    "array",
+    "object",
+    "remove",
+    "recursive"
+  ],
   "scripts": {
     "lint:js": "eslint . --fix",
-    "test": "node --experimental-worker ./testing"
+    "test": "node --experimental-worker ./testing",
+    "coverage": "node --experimental-worker ./testing --coverage",
+    "benchmark": "node --experimental-worker __benchmarks__/runner"
   },
   "devDependencies": {
     "@dimax-ar/eslint-config-dimax": "3.0.1",
     "beautify-benchmark": "0.2.4",
     "benchmark": "2.1.4",
+    "benchmark-json-reporter": "1.1.0",
     "deoptigate": "0.4.2",
-    "eslint": "5.7.0",
+    "eslint": "5.8.0",
+    "firebase-admin": "6.1.0",
     "jest": "23.6.0",
     "microtime": "2.1.8",
-    "prettier": "1.14.3"
+    "prettier": "1.15.1"
   }
 }

@@ -11,6 +11,8 @@ node_modules
 reports/**/*
 !reports/simple.xsl
 deoptigate
+coverage
+benchmarks
 
 # production
 temp/*

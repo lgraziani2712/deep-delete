@@ -10,6 +10,10 @@ node_modules
 # testing
 docs
 reports/**/*
+__benchmarks__/data.js
+deoptigate/**/*
+coverage/**/*
+benchmarks/**/*
 
 # production
 temp
