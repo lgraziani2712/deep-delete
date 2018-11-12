@@ -34,6 +34,7 @@
     "benchmark": "2.1.4",
     "benchmark-json-reporter": "1.1.0",
     "deoptigate": "0.4.2",
+    "dotenv": "6.1.0",
     "eslint": "5.8.0",
     "firebase-admin": "6.1.0",
     "jest": "23.6.0",
