@@ -33,6 +33,7 @@
     "beautify-benchmark": "0.2.4",
     "benchmark": "2.1.4",
     "benchmark-json-reporter": "1.1.0",
+    "coveralls": "3.0.2",
     "deoptigate": "0.4.2",
     "dotenv": "6.1.0",
     "eslint": "5.8.0",
