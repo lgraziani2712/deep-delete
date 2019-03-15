@@ -1,6 +1,6 @@
 {
   "name": "deep-delete",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Removes every matched key of every object recursively",
   "main": "./src/commonjs.js",
   "module": "./src/es.js",
