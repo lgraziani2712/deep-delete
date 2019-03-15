@@ -4,7 +4,7 @@
   "description": "Removes every matched key of every object recursively",
   "main": "./src/commonjs.js",
   "module": "./src/es.js",
-  "repository": "https://github.com/dimax/deep-delete",
+  "repository": "https://github.com/lgraziani2712/deep-delete",
   "author": "Luciano Graziani <@lgraziani2712>",
   "license": "MIT",
   "files": [
@@ -29,18 +29,18 @@
     "benchmark": "node --experimental-worker __benchmarks__/runner"
   },
   "devDependencies": {
-    "@dimax-ar/eslint-config-dimax": "3.0.1",
+    "@dimax-ar/eslint-config-dimax": "3.1.0",
     "beautify-benchmark": "0.2.4",
     "benchmark": "2.1.4",
     "benchmark-json-reporter": "1.1.0",
-    "coveralls": "3.0.2",
-    "deoptigate": "0.4.2",
-    "dotenv": "6.1.0",
-    "eslint": "5.8.0",
-    "firebase-admin": "6.1.0",
-    "jest": "23.6.0",
-    "jest-junit": "5.2.0",
-    "microtime": "2.1.8",
-    "prettier": "1.15.1"
+    "coveralls": "3.0.3",
+    "deoptigate": "0.5.0",
+    "dotenv": "7.0.0",
+    "eslint": "5.15.1",
+    "firebase-admin": "7.1.0",
+    "jest": "24.5.0",
+    "jest-junit": "6.3.0",
+    "microtime": "3.0.0",
+    "prettier": "1.16.4"
   }
 }
